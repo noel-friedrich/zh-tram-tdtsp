@@ -87,7 +87,8 @@ class TramPath:
     def zip(self):
         return zip(self.stops, self.stop_arrival_times, self.stop_departure_times, self.transportation_names)
 
-    def add_stop(self, stop: "TramStop", arrival_time: datetime, departure_time: datetime, transportation_name: TramName):
+    def add_stop(self, stop: "TramStop"=None, arrival_time: datetime=None,
+                 departure_time: datetime=None, transportation_name: TramName=None):
         self.stops.append(stop)
         self.stop_arrival_times.append(arrival_time)
         self.stop_departure_times.append(departure_time)

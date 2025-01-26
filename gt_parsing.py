@@ -1,4 +1,4 @@
-import csv, os, copy, re, math
+import csv, os, copy, re, math, random
 from datetime import datetime, timedelta
 from PIL import Image, ImageDraw, ImageFont
 
@@ -139,3 +139,13 @@ def is_trip_available(service_id, date_str):
                 return False # service removed
         
     return normally_available
+
+def random_choice_distribution(elements, probabilites):
+    assert len(elements) == len(probabilites)
+    probability_sum = sum(probabilites)
+    random_num = random.random() * probability_sum
+    for probability, element in zip(probabilites, elements):
+        random_num -= probability
+        if random_num <= 0:
+            return element
+    assert 1 == 2, "This should never happen."
