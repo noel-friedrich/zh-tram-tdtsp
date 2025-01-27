@@ -44,6 +44,9 @@ class TramName:
     def __str__(self):
         return f"T{self.name}"
     
+    def __hash__(self):
+        return hash(self.uid)
+    
     def save_str(self) -> str:
         return f"T{self.name}:{self.uid}"
     
@@ -163,10 +166,10 @@ class TramPath:
     def add_path(self, path: "TramPath", combine_trail=True):
         if len(self.stops) > 0 and self.stops[-1] == path.stops[0] and combine_trail:
             self.pop()
-        self.stops += path.stops
-        self.stop_arrival_times += path.stop_arrival_times
-        self.stop_departure_times += path.stop_departure_times
-        self.transportation_names += path.transportation_names
+        self.stops += path.stops[:]
+        self.stop_arrival_times += path.stop_arrival_times[:]
+        self.stop_departure_times += path.stop_departure_times[:]
+        self.transportation_names += path.transportation_names[:]
     
     def get_file_name(self, path_name: str, filetype="txt") -> str:
         departure_date = self.departure_times[0].date()
