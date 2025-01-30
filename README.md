@@ -9,7 +9,7 @@ I want to visit all Tram Stations in Zürich in one day, only by Tram. Using pub
 
 I have found the best path so far using Ant Colony Optimization (see `main.ipynb`). It has a theoretical length of 9 Hours, 6 Minutes and 18 Seconds and starts in Schlieren, Geissweid. The exact path can be found at `export-paths/ant.2025-01-28--9-06-18.txt`. I tried this path in real life on the 28.01.2025 and missed a few planned connections leading to a **current record of 9 hours and 37 minutes**. Given the opportunity, I dressed up as a travelling salesman. Here is a visualization of the path, it enumerates all stops and provides an additional outline:
 
-![Optimized Tram Path](visualizations\ant.2025-01-28--9-06-18.png)
+![Optimized Tram Path](visualizations/ant.2025-01-28--9-06-18.png)
 
 ## Code Structure
 
