@@ -325,18 +325,19 @@ class TramPath:
         out = ""
         last_tram = None
         last_start = None
+        last_dep = None
         stop_count = 0
         for stop, ari, dep, curr_tram in self.zip():
-            if curr_tram is None and last_tram is not None:
-                out += f"{last_start} -> {stop} ({last_tram}, {stop_count} stops)\n"
-                last_start = None
             if last_tram is not None and curr_tram is not None and last_tram == curr_tram:
                 stop_count += 1
-            if last_tram is not None and curr_tram is not None and last_tram != curr_tram:
-                out += f"{last_start} -> {stop} ({last_tram}, {stop_count} stops)\n"
+            if (last_tram is not None and curr_tram is not None and last_tram != curr_tram) or (curr_tram is None and last_tram is not None):
+                dep_str = str(last_dep).split(" ")[1]
+                ari_str = str(ari).split(" ")[1]
+                out += f"{last_start} ({dep_str}) -> {stop} ({ari_str}) using {last_tram} ({stop_count} stops)\n"
                 last_start = None
             if last_start is None:
                 last_start = stop
+                last_dep = dep
                 stop_count = 1
             last_tram = curr_tram
         return out[:-1]
