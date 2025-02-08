@@ -1,0 +1,320 @@
+Milchbuck
+Tierspital
+Waldgarten
+Ueberlandpark
+Schwamendingerplatz
+Heerenwiesen
+Luegisland
+Luchswiesen
+Altried
+Hirzenbach
+Altried
+Luchswiesen
+Luegisland
+Heerenwiesen
+Schwamendingerplatz
+Roswiesen
+Glattwiesen
+Probstei
+Mattenhof
+Bahnhof Stettbach
+Dübendorf, Ringwiesen
+Dübendorf, Am Ring
+Wallisellen, Neugut
+Wallisellen, Glatt (Tram)
+Wallisellen, Bahnhof
+Wallisellen, Belair
+Wallisellen, Herti
+Auzelg
+Fernsehstudio
+Glattpark
+Glattpark, Lindberghplatz
+Glattbrugg, Bahnhof
+Rümlang, Bäuler
+Glattbrugg, Unterriet
+Kloten Balsberg, Bahnhof
+Zürich Flughafen, Bahnhof
+Zürich Flughafen, Fracht
+Zürich Flughafen, Bahnhof
+Kloten Balsberg, Bahnhof
+Glattbrugg, Unterriet
+Rümlang, Bäuler
+Glattbrugg, Bahnhof
+Glattpark, Lindberghplatz
+Glattpark
+Oerlikerhus
+Leutschenbach
+Bahnhof Oerlikon Ost
+Felsenrainstrasse
+Seebacherplatz
+Seebach
+Seebacherplatz
+Felsenrainstrasse
+Bahnhof Oerlikon Ost
+Sternen Oerlikon
+Messe/Hallenstadion
+Sternen Oerlikon
+Bahnhof Oerlikon
+Regensbergbrücke
+Bad Allenmoos
+Brunnenhof
+Bucheggplatz C
+Laubiweg
+Schaffhauserplatz
+Röslistrasse
+Ottikerstrasse
+Sonneggstrasse
+Haldenegg
+Central
+Bahnhofplatz/HB
+Löwenplatz
+Sihlpost / HB
+Bahnhofstrasse/HB
+Rennweg
+Paradeplatz
+Sihlstrasse
+Paradeplatz
+Kantonalbank
+Bürkliplatz
+Rentenanstalt
+Bahnhof Enge
+Museum Rietberg
+Brunaustrasse
+Billoweg
+Zch, Bhf.Wollishofen/Staubstr.
+Renggerstrasse
+Morgental
+Butzenstrasse
+Wollishoferplatz
+Butzenstrasse
+Morgental
+Renggerstrasse
+Zch, Bhf.Wollishofen/Staubstr.
+Billoweg
+Brunaustrasse
+Museum Rietberg
+Bahnhof Enge
+Bahnhof Enge/Bederstr.
+Waffenplatzstrasse
+Sihlcity Nord
+Saalsporthalle
+Laubegg
+Uetlihof
+Strassenverkehrsamt
+Albisgütli
+Strassenverkehrsamt
+Uetlihof
+Laubegg
+Saalsporthalle
+Sihlcity Nord
+Waffenplatzstrasse
+Bahnhof Enge/Bederstr.
+Tunnelstrasse
+Stockerstrasse
+Bahnhof Selnau
+Stauffacher
+Bezirksgebäude
+Zürich,Kalkbreite/Bhf.Wiedikon
+Lochergut
+Zypressenstrasse
+Albisriederplatz B
+Letzigrund
+Freihofstrasse
+Kappeli
+Grimselstrasse
+Lindenplatz
+Bachmattstrasse
+Farbhof
+Micafil
+Schlieren, Mülligen
+Schlieren, Gasometerbrücke
+Schlieren, Wagonsfabrik
+Schlieren, Zentrum/Bahnhof
+Schlieren, Geissweid
+Schlieren, Zentrum/Bahnhof
+Schlieren, Wagonsfabrik
+Schlieren, Gasometerbrücke
+Schlieren, Mülligen
+Micafil
+Farbhof
+Bachmattstrasse
+Lindenplatz
+Grimselstrasse
+Kappeli
+Freihofstrasse
+Letzigrund
+Albisriederplatz B
+Altes Krematorium
+Hubertus
+Siemens
+Fellenbergstrasse
+Albisrieden
+Fellenbergstrasse
+Siemens
+Hubertus
+Altes Krematorium
+Albisriederplatz B
+Zypressenstrasse
+Lochergut
+Zürich,Kalkbreite/Bhf.Wiedikon
+Bezirksgebäude
+Stauffacher
+Werd
+Bahnhof Wiedikon
+Schmiede Wiedikon
+Goldbrunnenplatz
+Talwiesenstrasse
+Heuried
+Schaufelbergerstrasse
+Triemli
+Schaufelbergerstrasse
+Heuried
+Talwiesenstrasse
+Goldbrunnenplatz
+Schmiede Wiedikon
+Bahnhof Wiedikon
+Werd
+Stauffacher
+Helvetiaplatz
+Bäckeranlage
+Güterbahnhof
+Hardplatz
+Bahnhof Hardbrücke
+Schiffbau
+Technopark
+Toni-Areal
+Sportweg
+Aargauerstrasse
+Würzgraben
+Bahnhof Altstetten N K
+Würzgraben
+Aargauerstrasse
+Sportweg
+Toni-Areal
+Technopark
+Schiffbau
+Escher-Wyss-Platz
+Wipkingerplatz
+Waidfussweg
+Eschergutweg
+Alte Trotte
+Schwert
+Meierhofplatz
+Zwielplatz
+Wartau
+Winzerstrasse
+Frankental
+Winzerstrasse
+Wartau
+Zwielplatz
+Meierhofplatz
+Schwert
+Alte Trotte
+Eschergutweg
+Waidfussweg
+Wipkingerplatz
+Escher-Wyss-Platz
+Förrlibuckstrasse
+Fischerweg
+Bernoulli-Häuser
+Hardturm
+Hardhof
+Tüffenwies
+Grünaustrasse
+Bändliweg
+Werdhölzli
+Bändliweg
+Grünaustrasse
+Tüffenwies
+Hardhof
+Hardturm
+Bernoulli-Häuser
+Fischerweg
+Förrlibuckstrasse
+Escher-Wyss-Platz
+Löwenbräu
+Quellenstrasse
+Limmatplatz
+Museum für Gestaltung
+Sihlquai/HB
+Stampfenbachplatz
+Beckenhof
+Kronenstrasse
+Beckenhof
+Stampfenbachplatz
+Bahnhofquai/HB
+Central
+Rudolf-Brun-Brücke
+Rathaus
+Helmhaus
+Bellevue
+Opernhaus
+Kreuzstrasse
+Feldeggstrasse
+Höschgasse
+Fröhlichstrasse
+Wildbachstrasse
+Bahnhof Tiefenbrunnen
+Wildbachstrasse
+Fröhlichstrasse
+Höschgasse
+Feldeggstrasse
+Kreuzstrasse
+Bahnhof Stadelhofen
+Kreuzplatz
+Signaustrasse
+Hegibachplatz B
+Hedwigsteig
+Wetlistrasse
+Burgwies
+Balgrist
+Friedhof Enzenbühl
+Rehalp
+Friedhof Enzenbühl
+Balgrist
+Burgwies
+Wetlistrasse
+Hedwigsteig
+Hegibachplatz B
+Signaustrasse
+Englischviertelstrasse
+Römerhof
+Hölderlinstrasse
+Klusplatz A
+Hölderlinstrasse
+Römerhof
+Hottingerplatz
+Kunsthaus
+Neumarkt
+Kunsthaus
+Kantonsschule
+Platte
+Voltastrasse
+Kirche Fluntern
+Toblerplatz
+Zürichbergstrasse
+Susenbergstrasse
+Zoo
+Susenbergstrasse
+Zürichbergstrasse
+Toblerplatz
+Kirche Fluntern
+Voltastrasse
+Platte
+ETH/Universitätsspital
+Haldenbach
+Winkelriedstrasse
+Seilbahn Rigiblick
+Kinkelstrasse
+Letzistrasse
+Langmauerstrasse
+Universität Irchel
+Milchbuck
+Guggachstrasse
+Milchbuck
+Hirschwiesenstrasse
+Berninaplatz
+Salersteig
+Berninaplatz
+Hirschwiesenstrasse
+Milchbuck
