@@ -211,14 +211,27 @@ class TramPath:
                 path.add_stop(sto, ari, dep, tra)
         return path
     
-    def generate_image(self, mark_stop_func=lambda s: False) -> Image:
+    def generate_image(self, mark_stop_func=lambda s: False, big_path=False, greyscale_background=False) -> Image:
         background_image_path = "assets/karte3.png"
         top_left_coords = (47.459425, 8.437827)
         bottom_right_coords = (47.310020, 8.637158)
 
+        line_width = 5
+        signs_font_size = 12
+        signs_padding = (2, 0)
+
+        if big_path:
+            line_width = 10
+            signs_font_size = 20
+            signs_padding = (5, 3)
+
         image = Image.open(background_image_path)
+        if greyscale_background:
+            # convert to grayscale first, then to RGB again to draw colorful on it
+            image = image.convert("L").convert("RGB")
+
         draw = ImageDraw.Draw(image)
-        small_font = ImageFont.truetype("C:\\Windows\\Fonts\\CascadiaCode.ttf", 12)
+        small_font = ImageFont.truetype("C:\\Windows\\Fonts\\CascadiaCode.ttf", signs_font_size)
         big_font = ImageFont.truetype("C:\\Windows\\Fonts\\CascadiaCode.ttf", 40)
         
         def px_from_coords(coords: tuple[float]) -> list[float]:
@@ -285,7 +298,7 @@ class TramPath:
             p2 = px_from_coords(next_stop.coords)
             tram = self.transportation_names[i]
             color = get_tram_color(tram)["background"]
-            draw.line(p1 + p2, fill=color, width=5)
+            draw.line(p1 + p2, fill=color, width=line_width)
             
         stop_numbers: dict["TramStop", int] = {}
         for i, stop in enumerate(self.stops):
@@ -305,18 +318,18 @@ class TramPath:
                 position, f"{(i + 1):03}",
                 foreground=colors["foreground"],
                 background=colors["background"],
-                padding=(2, 0),
+                padding=signs_padding,
                 font=small_font
             )
         
         return image
     
-    def show(self):
-        image = self.generate_image()
+    def show(self, **kwargs):
+        image = self.generate_image(**kwargs)
         image.show()
 
-    def save_image(self, name):
-        image = self.generate_image()
+    def save_image(self, name, **kwargs):
+        image = self.generate_image(**kwargs)
         file_name = self.get_file_name(name, filetype="png")
         image.save(os.path.join(PATH_VISUALIZATIONS_DIRECTORY, file_name))
         return file_name
@@ -484,3 +497,69 @@ class TramNetwork:
             tram_stop.sort_connections()
 
         self.loaded_date_strs.add(date_str)
+
+# init dijkstra logic
+
+import bisect
+
+MAX_TRANSITION_SECONDS = 30 * 60
+MIN_CHANGE_BUFFER_SECONDS = 30
+
+class NoConnectionsLeftException(Exception):
+    pass
+
+def calc_dijkstra_path_to(start_time: datetime, start: TramStop, destination_criterium,
+                          start_tram: TramName=None, weight_func=None) -> TramPath:
+    visited_stops = set()
+    start_connection = TramPath([start], [start_time], [None], [None])
+    visit_stack = [(0, start_time, start_connection, start)]
+
+    while len(visit_stack) > 0:
+        _, curr_time, prev_stops, stop = visit_stack.pop(0)
+        if stop in visited_stops:
+            continue
+
+        visited_stops.add(stop)
+        if destination_criterium(stop):
+            return prev_stops
+
+        connections = stop.get_departures_after(curr_time)
+        for connection in connections:
+            wait_seconds = (connection.arrival_time - curr_time).total_seconds()
+            
+            if len(prev_stops) >= 2:
+                last_tram_name = prev_stops.transportation_names[-2]
+            else:
+                last_tram_name = start_tram
+
+            if last_tram_name is not None and connection.tram_name != last_tram_name:
+                # it's a change of tram!
+                if wait_seconds < MIN_CHANGE_BUFFER_SECONDS:
+                    continue
+
+            if wait_seconds >= MAX_TRANSITION_SECONDS:
+                break
+
+            new_stop = connection.stops[1]
+            new_time = connection.arrival_times[1]
+            if new_stop in visited_stops:
+                continue
+
+            prev_stops_copy = prev_stops.slice(0)
+            prev_stops_copy.stop_departure_times[-1] = connection.departure_time
+            prev_stops_copy.transportation_names[-1] = connection.tram_name
+
+            prev_stops_copy.add_stop(new_stop, new_time, None, None)
+            
+            weight = new_time.timestamp()
+            if weight_func is not None:
+                weight += weight_func(new_stop)
+
+            bisect.insort(visit_stack, (weight, new_time, prev_stops_copy, new_stop))
+            
+    raise NoConnectionsLeftException("Couldn't find connection in time")
+
+def calc_dijkstra_path_between(start_time: datetime, start: TramStop, destination: TramStop,
+                               start_tram: TramName=None, weight_func=None) -> TramPath:
+    destination_criterium = lambda stop: stop == destination
+    return calc_dijkstra_path_to(start_time, start, destination_criterium, start_tram=start_tram, weight_func=weight_func)
